@@ -162,7 +162,7 @@ const AboutSection = () => {
             {/* Action Buttons */}
             <div className="flex gap-3">
               <motion.a
-                href="https://drive.google.com/file/d/1LZqKJ1beK1m62dO3XYJVgt8N9Z8Mgyfc/view?usp=sharing"
+                href="https://drive.google.com/file/d/1lbpDFVBIMfL5Hkfj55j8xwxSe_9Tbs1C/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 bg-white hover:bg-gray-100 text-gray-900 px-4 py-3 rounded-xl font-medium text-sm flex items-center justify-center gap-2 transition-colors"

@@ -23,7 +23,19 @@ type Item = {
 
 const defaultItems: Item[] = [
   {
-    year: "2023 - NOW",
+    year: "2026 - Now",
+    title: "Frontend Web Developer",
+    company: "PT. Prima Karya Sarana Sejahtera",
+    location: "Jakarta, ID",
+    bullets: [
+      "Develop and maintain enterprise banking applications, including Cash Management Systems (CMS) and Electronic Fund Transfer (EFT) solutions, covering transaction creation, recurring transfers, management, and approval workflows.",
+      "Build scalable and reusable frontend components using React.js and TypeScript, implement Microfrontend Architecture with Module Federation, and integrate backend services through RESTful APIs.",
+      "Collaborate with cross-functional teams to deliver banking features, troubleshoot application issues, perform bug fixes, and ensure application reliability, maintainability, and performance."
+    ],
+    link: "https://qlolabybri.com/redirect",
+  },
+  {
+    year: "2023 - 2026",
     title: "Frontend Web Developer",
     company: "Ordent",
     location: "Bandung, ID",
@@ -79,13 +91,13 @@ const WorkSection: React.FC<Props> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === items.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? items.length - 1 : prevIndex - 1
     );
   };
@@ -162,7 +174,7 @@ const WorkSection: React.FC<Props> = ({
         {/* Carousel Container */}
         <div className="relative">
           {/* Carousel Content dengan Gesture Support */}
-          <div 
+          <div
             className="relative overflow-hidden rounded-3xl cursor-grab active:cursor-grabbing"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
@@ -175,8 +187,8 @@ const WorkSection: React.FC<Props> = ({
                 initial={{ opacity: 0, x: 300 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -300 }}
-                transition={{ 
-                  duration: 0.5, 
+                transition={{
+                  duration: 0.5,
                   ease: "easeInOut",
                   type: "spring",
                   stiffness: 300,
@@ -230,7 +242,7 @@ const WorkSection: React.FC<Props> = ({
                         {items[currentIndex].description}
                       </p>
                     )}
-                    
+
                     {items[currentIndex].bullets && items[currentIndex].bullets!.length > 0 && (
                       <div className="space-y-3">
                         {items[currentIndex].bullets!.map((bullet, bulletIndex) => (
@@ -331,11 +343,10 @@ const WorkSection: React.FC<Props> = ({
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
                     ? 'bg-gradient-to-r from-blue-500 to-purple-500 scale-125'
                     : 'bg-gray-600 hover:bg-gray-500'
-                }`}
+                  }`}
                 aria-label={`Go to experience ${index + 1}`}
               />
             ))}
